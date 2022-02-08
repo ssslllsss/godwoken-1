@@ -39,11 +39,11 @@ It is necessary to initialize an account in order to send transactions on Godwok
 
 1. Visit YokaiSwap ([Testnet](https://testnet.yokaiswap.com/) or [Mainnet](https://www.yokaiswap.com/)). 
 
-2. Connect the wallet and obtain the **L1 YOKAI DEPOSIT ADDRESS**.
+2. Connect the wallet and obtain the **L1 YOKAI DEPOSIT ADDRESS**. // 这里似乎有两张图片显示不出来？
    <img src={useBaseUrl("img/integration/yokai-wallet.png")}  width="100%"/>
    <img src={useBaseUrl("img/integration/deposit-address.png")}  width="100%"/>
    
-3. Send a minimum of **400** CKBs from a CKB wallet to this address.
+3. Send a minimum of **400** CKBs from a CKB wallet to this address. // 这里似乎有一张图片显示不出来？
 
    **Note:** Use [Nervos Faucet](https://faucet.nervos.org/) to fund the CKB wallet in Testnet.
 
@@ -62,16 +62,16 @@ The current source chains can be:
 - Ethereum
 - Binance Smart Chain
 
-It is possible to manipulate the bridged token with ERC20 abi and given address.
+It is possible to manipulate the bridged token with ERC20 ABI and given address.
 
 - [Bridged Token list](https://github.com/nervosnetwork/godwoken-info/blob/master/mainnet/ERC20TokenList.json)
-- [ERC20 contract and abi used in Godwoken](https://github.com/nervosnetwork/godwoken-polyjuice/tree/main/solidity/erc20)
+- [ERC20 contract and ABI used in Godwoken](https://github.com/nervosnetwork/godwoken-polyjuice/tree/main/solidity/erc20)
 
 CKB is also a bridged token on Godwoken. CKB acts as a native token for Godwoken in the same way that ETH does for Ethereum, but can also operate with the ERC20 proxy contract.
 
-A few facts to aware when manipulating the CKB:
+A few facts to keep in mind when manipulating the CKB:
 
-1. Do not transfer CKB with `sendTransaction` to arbitrary address carrying the value. Use the `transfer` method in the CKB ERC20 proxy contract to transfer CKB.
+1. Do not transfer CKB with `sendTransaction` to any arbitrary address carrying the value. Use the `transfer` method in the CKB ERC20 proxy contract to transfer CKB.
 2. Use the `getBalance` method of the Ethereum RPC to get the balance of CKB. Note that the decimal return value for CKB is 8, not 18 as in ETH. The balance of CKB can also be obtained using the `balanceOf` method in the CKB ERC20 proxy contract.
 3. The CKB ERC20 proxy contract address is `0x6BFD7c449B3FFDaCCcac80Cf3cA6bb89e9bF309C` for Testnet, and `0x9D9599c41383D7009C2093319d576AA6F89A4449` for Mainnet.
 4. It is **impossible** to use MetaMask or other wallets to show or send CKB.
